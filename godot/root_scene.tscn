@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr2o8u5laboqw"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gh7u4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itajj"]
+albedo_color = Color(0.26615068, 0.29171592, 0.11455334, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.9981104, 0.05576107, 0.025820758, 0, -0.4201967, 0.90743303, 0.061449237, -0.90571827, -0.4194026, 1.695312, 35.32233, 19.072067)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.9981103, 0.05233965, -0.032195788, 0, 0.5239413, 0.85175437, 0.061449233, -0.85014474, 0.5229511, 1.695312, 35.32233, 19.072067)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(12.015565, 0, 0, 0, 1, 0, 0, 0, 22.097486, 0, 0.014612317, 0)
+mesh = SubResource("PlaneMesh_gh7u4")
+skeleton = NodePath("../Camera3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_itajj")
