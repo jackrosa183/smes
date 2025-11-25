@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0nwyjxj47g7c"]
-
-[ext_resource type="PackedScene" uid="uid://xlkw6uixkf6v" path="res://blend/smitty_simple.glb" id="1_vt7on"]
-
-[node name="smitty_simple" instance=ExtResource("1_vt7on")]

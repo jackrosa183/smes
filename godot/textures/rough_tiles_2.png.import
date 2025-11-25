@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsqxmfco7cj52"
-path.s3tc="res://.godot/imported/smitty_simple_Material Base Color.png-4604a3885820852e4b0132268389a9af.s3tc.ctex"
+uid="uid://bgvb40w3jb51s"
+path.s3tc="res://.godot/imported/rough_tiles_2.png-ea3c47a7cd0ccbfbe80aaa2fc0dd5a36.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "1bef3628ee6028e70498dede05a19711"
-}
 
 [deps]
 
-source_file="res://blend/smitty_simple_Material Base Color.png"
-dest_files=["res://.godot/imported/smitty_simple_Material Base Color.png-4604a3885820852e4b0132268389a9af.s3tc.ctex"]
+source_file="res://textures/rough_tiles_2.png"
+dest_files=["res://.godot/imported/rough_tiles_2.png-ea3c47a7cd0ccbfbe80aaa2fc0dd5a36.s3tc.ctex"]
 
 [params]
 

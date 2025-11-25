@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0tkkvpvgdh55"]
+
+[ext_resource type="PackedScene" uid="uid://xlkw6uixkf6v" path="res://blend/smitty_simple.glb" id="1_upbli"]
+[ext_resource type="Texture2D" uid="uid://dsqxmfco7cj52" path="res://blend/smitty_simple_Material Base Color.png" id="2_tu1g7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7f683"]
+albedo_texture = ExtResource("2_tu1g7")
+
+[node name="smitty_simple" instance=ExtResource("1_upbli")]
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(-0.30411604, 0, -2.6586669e-08, 0, 0.30411604, 0, 2.6586669e-08, 0, -0.30411604, 0, 0.7317724, 0)
+
+[node name="Smitty" parent="Armature" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7f683")
