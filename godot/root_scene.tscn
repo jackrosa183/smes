@@ -1,18 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dr2o8u5laboqw"]
+[gd_scene load_steps=4 format=3 uid="uid://dr2o8u5laboqw"]
 
 [ext_resource type="Texture2D" uid="uid://bgvb40w3jb51s" path="res://textures/rough_tiles_2.png" id="1_itajj"]
-[ext_resource type="PackedScene" uid="uid://d0tkkvpvgdh55" path="res://controller/player_controller.tscn" id="2_c77vg"]
-[ext_resource type="Script" uid="uid://berx8wvlajrdv" path="res://scripts/thirdperson.gd" id="3_iqet6"]
+[ext_resource type="PackedScene" uid="uid://hw4bt5ffj8nx" path="res://player_controller.tscn" id="2_c77vg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c77vg"]
 albedo_texture = ExtResource("1_itajj")
 uv1_triplanar = true
 uv1_world_triplanar = true
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iqet6"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_iqet6"]
-radius = 0.82
 
 [node name="Node3D" type="Node3D"]
 
@@ -23,34 +17,12 @@ size = Vector3(101.07434, 1, 100)
 material = SubResource("StandardMaterial3D_c77vg")
 
 [node name="Wall" type="CSGBox3D" parent="."]
-transform = Transform3D(0.100743234, 0, 0, 0, 2.5242672, 0, 0, 0, 0.03471288, 0.5371704, 1.3219074, -2.659034)
+transform = Transform3D(0.100743234, 0, 0, 0, 2.5242672, 0, 0, 0, 0.03471288, 0.5356424, 1.3219074, -8.650148)
 use_collision = true
-size = Vector3(101.07434, 1, 100)
+size = Vector3(101.04401, 1, 100)
 material = SubResource("StandardMaterial3D_c77vg")
 
-[node name="PlayerController" type="CharacterBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerController"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96070737, 0)
-shape = SubResource("CapsuleShape3D_iqet6")
-
-[node name="MeshRoot" type="Node3D" parent="PlayerController"]
-
-[node name="smitty_simple" parent="PlayerController/MeshRoot" instance=ExtResource("2_c77vg")]
-
-[node name="CamRoot" type="Node3D" parent="PlayerController"]
-script = ExtResource("3_iqet6")
-
-[node name="CamYaw" type="Node3D" parent="PlayerController/CamRoot"]
-
-[node name="CamPitch" type="Node3D" parent="PlayerController/CamRoot/CamYaw"]
-
-[node name="SpringArm3D" type="SpringArm3D" parent="PlayerController/CamRoot/CamYaw/CamPitch"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.453391, 0.048166275)
-shape = SubResource("SphereShape3D_iqet6")
-spring_length = 4.0
-
-[node name="Camera3D" type="Camera3D" parent="PlayerController/CamRoot/CamYaw/CamPitch/SpringArm3D"]
+[node name="PlayerController" parent="." instance=ExtResource("2_c77vg")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.28476825, 0.9585964, 0, -0.9585964, 0.28476825, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -0.7031342, 0.7110572, 0, -0.7110572, -0.7031342, 0, 0, 0)
