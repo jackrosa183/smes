@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dtulmx70vfkhh"]
+
+[ext_resource type="Texture2D" uid="uid://dsqxmfco7cj52" path="res://blend/smitty_simple_Material Base Color.png" id="1_42tx2"]
+
+[resource]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.847561)
+albedo_texture = ExtResource("1_42tx2")
