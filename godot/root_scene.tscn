@@ -17,12 +17,19 @@ size = Vector3(101.07434, 1, 100)
 material = SubResource("StandardMaterial3D_c77vg")
 
 [node name="Wall" type="CSGBox3D" parent="."]
-transform = Transform3D(0.100743234, 0, 0, 0, 2.5242672, 0, 0, 0, 0.03471288, 0.5356424, 1.3219074, -8.650148)
+transform = Transform3D(0.100743234, 0, 0, 0, 2.5242672, 0, 0, 0, 0.03471288, 0.5356424, 1.3219074, -14.663412)
+use_collision = true
+size = Vector3(101.04401, 1, 100)
+material = SubResource("StandardMaterial3D_c77vg")
+
+[node name="Wall2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.0968875, 0.6916734, 0, -0.02760461, 2.427656, 0, 0, 0, 0.03471288, -8.809261, 0.18936431, -7.9814854)
 use_collision = true
 size = Vector3(101.04401, 1, 100)
 material = SubResource("StandardMaterial3D_c77vg")
 
 [node name="PlayerController" parent="." instance=ExtResource("2_c77vg")]
+walk_speed = 7.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.7031342, 0.7110572, 0, -0.7110572, -0.7031342, 0, 0, 0)
