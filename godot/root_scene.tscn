@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr2o8u5laboqw"]
+[gd_scene load_steps=5 format=3 uid="uid://dr2o8u5laboqw"]
 
 [ext_resource type="Texture2D" uid="uid://bgvb40w3jb51s" path="res://textures/rough_tiles_2.png" id="1_itajj"]
 [ext_resource type="PackedScene" uid="uid://hw4bt5ffj8nx" path="res://player_controller.tscn" id="2_c77vg"]
+[ext_resource type="PackedScene" uid="uid://bnbqmdvtdofsc" path="res://walkman.tscn" id="3_iqet6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c77vg"]
 albedo_texture = ExtResource("1_itajj")
@@ -28,8 +29,11 @@ use_collision = true
 size = Vector3(101.04401, 1, 100)
 material = SubResource("StandardMaterial3D_c77vg")
 
-[node name="PlayerController" parent="." instance=ExtResource("2_c77vg")]
+[node name="PlayerController" parent="." groups=["player"] instance=ExtResource("2_c77vg")]
 walk_speed = 7.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.7031342, 0.7110572, 0, -0.7110572, -0.7031342, 0, 0, 0)
+
+[node name="Walkman" parent="." instance=ExtResource("3_iqet6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5507302, 0.5657064, -7.8321695)
