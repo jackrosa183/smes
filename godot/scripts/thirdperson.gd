@@ -24,7 +24,7 @@ var pitch_min = -55
 enum animation_states {IDLE, WALK, JUMP}
 
 var current_anim: animation_states = animation_states.IDLE
-var right_hand_carrying = false
+var carrying = false
 
 var walk_val: float = 0.0
 
@@ -37,6 +37,15 @@ func _input(event):
 		yaw += -event.relative.x * look_sensitivity
 		pitch += -event.relative.y * look_sensitivity
 		return
+	
+	if event.is_action_pressed("interact"):
+		if carrying:
+			for item in get_tree().get_nodes_in_group("pickup"):
+				item.player_drop()
+		else:
+			for item in get_tree().get_nodes_in_group("pickup"):
+				item.player_pickup()
+		
 	if not (event is InputEventKey and event.pressed):
 		return
 
@@ -62,7 +71,6 @@ func _handle_animation():
 
 
 func _physics_process(delta: float):
-	print(right_hand_carrying)
 	_handle_animation()
 	_handle_camera_look(delta)
 	_handle_movement(delta)

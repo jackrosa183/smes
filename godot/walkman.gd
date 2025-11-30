@@ -1,21 +1,38 @@
 extends Node3D
 
 var player_ref
+var can_pickup := false
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		player_ref = body
-		player_pickup()
-
+		can_pickup = true
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		player_ref = null
+		can_pickup = false
 		
+
 func player_pickup():
 	if player_ref:
-		var right_hand_pickup = player_ref.get_node("MeshRoot/Armature/Skeleton3D/BoneAttachment3D/RightHandPickup")
-		reparent(right_hand_pickup)
-		player_ref.right_hand_carrying = true
-		transform = Transform3D.IDENTITY
+		self.collision_layer = 0
+		self.collision_mask = 0
 		
+		var right_hand_pickup = player_ref.get_node("MeshRoot/Armature/Skeleton3D/BoneAttachment3D/RightHandPickup")
+
+		var target_transform: Transform3D = right_hand_pickup.global_transform
+
+		var tween := create_tween()
+		tween.tween_property(self, "global_transform", target_transform, 0.2).set_trans(Tween.TRANS_LINEAR)
+
+		tween.finished.connect(func():
+			reparent(right_hand_pickup)
+			transform = Transform3D.IDENTITY
+			player_ref.carrying = true
+		)
+
+func player_drop():
+	self.collision_layer = 2
+	self.collision_mask = 2
+	player_ref.carrying = false
+	reparent(get_tree().current_scene)
