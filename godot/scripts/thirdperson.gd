@@ -24,6 +24,7 @@ var pitch_min = -55
 enum animation_states {IDLE, WALK, JUMP}
 
 var current_anim: animation_states = animation_states.IDLE
+var right_hand_carrying = false
 
 var walk_val: float = 0.0
 
@@ -61,6 +62,7 @@ func _handle_animation():
 
 
 func _physics_process(delta: float):
+	print(right_hand_carrying)
 	_handle_animation()
 	_handle_camera_look(delta)
 	_handle_movement(delta)
@@ -75,7 +77,6 @@ func _handle_movement(delta: float):
 	if not is_on_floor():
 		current_anim = animation_states.JUMP
 		velocity += get_gravity() * delta
-		
 
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	var move_direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
