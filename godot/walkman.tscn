@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnbqmdvtdofsc"]
 
-[ext_resource type="Script" uid="uid://bdw0r5trt28i4" path="res://walkman.gd" id="1_xrsyt"]
+[ext_resource type="Script" uid="uid://bdw0r5trt28i4" path="res://scripts/walkman.gd" id="1_xrsyt"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrsyt"]
 

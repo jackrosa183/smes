@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dr2o8u5laboqw"]
+[gd_scene load_steps=8 format=3 uid="uid://dr2o8u5laboqw"]
 
 [ext_resource type="Texture2D" uid="uid://bgvb40w3jb51s" path="res://textures/rough_tiles_2.png" id="1_itajj"]
 [ext_resource type="PackedScene" uid="uid://hw4bt5ffj8nx" path="res://player_controller.tscn" id="2_c77vg"]
 [ext_resource type="PackedScene" uid="uid://bnbqmdvtdofsc" path="res://walkman.tscn" id="3_iqet6"]
+[ext_resource type="PackedScene" uid="uid://bty2cqtkxabpc" path="res://record.tscn" id="4_t2jh2"]
 
 [sub_resource type="Environment" id="Environment_iqet6"]
 background_mode = 1
@@ -52,3 +53,18 @@ walk_speed = 7.0
 
 [node name="Walkman" parent="." instance=ExtResource("3_iqet6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5507302, 1.0122223, -7.8321695)
+
+[node name="Record" parent="." instance=ExtResource("4_t2jh2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -6)
+recording_name = "Meet Me On 13"
+artist = "Prairie Roots"
+
+[node name="Record2" parent="." instance=ExtResource("4_t2jh2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.708357, 0.50679827, 5.442225)
+recording_name = "I Wish I Knew Latin"
+artist = "Prairie Roots"
+
+[node name="Record3" parent="." instance=ExtResource("4_t2jh2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2410793, 0.50679827, 3.953043)
+recording_name = "Casillero"
+artist = "Prairie Roots"
